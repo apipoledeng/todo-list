@@ -43,6 +43,7 @@ def bucket_delete():
 @app.route("/bucket", methods=["GET"])
 def bucket_get():
     buckets_list = list(db.bucket.find({},{'_id':False}))
+    print(buckets_list)
     return jsonify({'buckets':buckets_list})
 
 if __name__ == '__main__':
